@@ -61,4 +61,4 @@ jupyter-1  |         http://127.0.0.1:8888/lab?token=4d0ce25e42fd2211f4aa0b68536
 
 ## Examples
 
-- [getting-started](./jupyter/examples/getting_started.ipynb)
+- [getting-started](./jupyter/examples/geting_started.ipynb)
