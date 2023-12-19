@@ -1,0 +1,28 @@
+services:
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports: 
+      - 11434:11434
+    volumes: 
+      - ./ollama:/root/.ollama
+  
+  jupyter:
+    image: quay.io/jupyter/minimal-notebook
+    ports: 
+      - 8888:8888
+    volumes: 
+      - ./jupyter:/home/jovyan/work
+      - ./jupyter/configure_environment.sh:/usr/local/bin/before-notebook.d/configure_environment.sh
+
+  pgvector:
+    image: ankane/pgvector
+    container_name: pgvector
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./pgvector/db:/var/lib/postgresql/data
