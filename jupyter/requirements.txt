@@ -2,3 +2,7 @@ python-dotenv
 langchain
 openai
 boto3
+llama-cpp-python
+pgvector
+unstructured
+duckdb
