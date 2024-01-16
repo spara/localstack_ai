@@ -18,15 +18,26 @@ $ cd ./pgvector
 $ git clone https://github.com/pgvector/pgvector/tree/master
 ```
 
-## Start the stack
+## Start a stack
 
-To start the stack with built images:
+Localstack AI supports Ollama and Llamfile and creates a separate stack for each. You will need to download an LLM for each stack respectively.
+
+> Download models for [Ollama](https://ollama.ai/library).
+
+> Download models in GGUF format for Lllamafile from [Huggingface](https://huggingface.co/models).
+
+To start a stack with built images:
 
 ```bash
-$ docker compose -f buildstack.yml up
+$ docker compose -f ollama_stack.yml up
+```
+or
+
+```bash
+$ docker compose -f llamafile_stack.yml up
 ```
 
-To start the stack and build PostgreSQL with pgvector:
+To start the Ollama stack and build PostgreSQL with pgvector:
 
 ```bash
 $ docker compose -f buildstack-pgvector-build.yml up
