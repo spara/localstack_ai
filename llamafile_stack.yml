@@ -1,0 +1,30 @@
+services:
+  llamafile:
+    image: llamafile:0.6
+    build: ./llamafile
+    ports: 
+      - 8080:8080
+    volumes: 
+      - ./llamafile/model/mistral-7b-v0.1.Q5_K_M.gguf:/model
+    command: ["--server", "--host", "0.0.0.0", "-m", "/model"]
+  
+  
+  jupyter:
+    image: quay.io/jupyter/minimal-notebook
+    ports: 
+      - 8888:8888
+    volumes: 
+      - ./jupyter:/home/jovyan/work
+      - ./jupyter/configure_environment.sh:/usr/local/bin/before-notebook.d/configure_environment.sh
+
+  pgvector:
+    image: ankane/pgvector
+    container_name: pgvector
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./pgvector/db:/var/lib/postgresql/data
