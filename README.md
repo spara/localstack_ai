@@ -72,5 +72,5 @@ jupyter-1  |         http://127.0.0.1:8888/lab?token=4d0ce25e42fd2211f4aa0b68536
 
 ## Examples
 
-- [Ollama getting started](jupyter/examples/ollama_geting_started.ipynb)
-- [Llamafile getting started](jupyter/examples/llamafile_geting_started.ipynb)
+- [Ollama getting started](./jupyter/examples/ollama_cpu_getting_started.ipynb)
+- [Llamafile getting started](jupyter/examples/llamafile_getting_started.ipynb)
