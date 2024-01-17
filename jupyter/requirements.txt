@@ -4,4 +4,4 @@ openai
 boto3
 pgvector
 duckdb
-llama-cpp-python --no-cache-dirclear
+llama-cpp-python

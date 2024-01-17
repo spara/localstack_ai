@@ -8,9 +8,9 @@ services:
       - ./llamafile/model/mistral-7b-v0.1.Q5_K_M.gguf:/model
     command: ["--server", "--host", "0.0.0.0", "-m", "/model"]
   
-  
   jupyter:
-    image: quay.io/jupyter/minimal-notebook
+    build: ./jupyter/.
+    container_name: minimal-notebook
     ports: 
       - 8888:8888
     volumes: 
