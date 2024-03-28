@@ -2,6 +2,7 @@ FROM quay.io/jupyter/minimal-notebook
 
 USER root
 
+# adding tools to build llama-cpp-python wheel
 RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
